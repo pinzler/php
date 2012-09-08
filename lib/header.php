@@ -21,7 +21,7 @@
     background-repeat: no-repeat; }
     .footer .container {padding:0; }
  /*End overrides*/   
-    #main {background:#00B1C4; padding-top: 1em; border-left: 5px solid #E64395; border-right: 5px solid #E64395;  padding-bottom: 344px;
+    #main {background:#00B1C4; padding-top: 1em; border-left: 5px solid #E64395; border-right: 5px solid #E64395;  padding-bottom: 200px;
     padding-top: 40px;}
     #hdr-container {background:#fff; width: 99%; padding-left: 0; }
     .seat {height:140px; background-color:#E3E3E3; margin-bottom: 1em; }

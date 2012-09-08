@@ -1,19 +1,11 @@
-<html>
-  <head>
-    <title>Who Do We Eat Next?</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-    .seat {height:140px; background-color:green; margin-bottom: 1em; }
-    .seat-overlay {color: red;  margin-top: 0; padding-left: 45px; padding-top: 0; position: absolute; width: 45px; }
-    </style>
-  </head>
-  <body>
-    
-    <div class="container">
+<?php
+include "lib/header.php";
+?>
 
-		<h1>Who Do We Eat Next?</h1>
-
+<div class="row">
+		<div class="span10" style="margin-bottom:2em; "><p class="well">Choose carefully. You never know what's inside...</p></div>
+		
+		</div>
 
 
 <?php
@@ -81,6 +73,7 @@ if(isset($_REQUEST['flight']))
 	      );
 	}
 	$countseats = 1;
+	$firstrow=true;	
 	foreach ($seats as $seatkey) {
 		$checkval = true;
 		if($countseats==1)
@@ -88,7 +81,7 @@ if(isset($_REQUEST['flight']))
 					if($countseats==2 || $countseats==4)
 						echo '<div class="span2 seat" href="#" ';
 					if($countseats==3)
-						echo '<div class="span2 offset3 seat" href="#" ';
+						echo '<div class="span2 offset2 seat" href="#" ';
 					
 
 		foreach ($filledseats as $fskey) {
@@ -132,6 +125,13 @@ if(isset($_REQUEST['flight']))
 				}
 				if($countseats==4)
 						echo '</div>';
+
+				if($countseats==4 && $firstrow)
+				{
+					$firstrow=false;
+					echo '<div class="row"><div class="span4" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div><div class="span4 offset2" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div></div>';
+				}
+
 				$countseats++;
 				if($countseats==5)
 					$countseats=1;
@@ -148,13 +148,7 @@ else
 
  </div> <!-- /container -->
     
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    
-	<script>  
-	$(function ()  
-	{ $(".seat").popover();  
-	});
-	</script>     
-  </body>
-</html>
+
+<?php 
+include "lib/footer.php";
+?>

@@ -148,7 +148,7 @@
       You could get help in the <a href="http://www.redhat.com/openshift">OpenShift forums</a>, or
     </li>
     <li>
-      You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
+      You're welcome to come chat with us in our channel at #openshift on freenode.net
     </li>
   </ul>
 </body>

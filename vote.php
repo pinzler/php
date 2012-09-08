@@ -160,11 +160,12 @@ function endvote()
 			tempIndex=index;
 			highscore = dataTest[index][0] 
 		}
+		}
 		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!");
 		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 
 		window.location.href = "flight.php?flight="+flight;
-		}
+		
 
 }
 

@@ -10,7 +10,7 @@ include "lib/header.php";
 		<div class="row">
 			<div class="span2 seat" href="#" rel="popover" data-content="<i>AND here's some amazing content. It's very engaging. right?</i><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' />" data-original-title="Name of Passenger"><h1 class="seat-overlay">A1</h1>
 			</div>
-			<div class="span2 seat" href="#" rel="popover" data-content="<i>AND <a href='http://google.com'>here's</a> some amazing content. It's very engaging. right?</i><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' />" data-original-title="Name of Passenger"><h1 class="seat-overlay">A2</h1><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' />
+			<div class="span2 seat" href="#" rel="popover" data-content="<i>AND <a href='http://google.com'>here's</a> some amazing content. It's very engaging. right?</i><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' />" data-original-title="Name of Passenger"><h1 class="seat-overlay">A2</h1><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' /> <img class="skull" src='/img/skull_140x140.png' />
 			</div>
 			
 			<div class="span2 offset2 seat" href="#" rel="popover" data-placement="left" data-content="<i>AND here's some amazing content. It's very engaging. right?</i><img src='http://cdn07.boweryboogie.com/content/uploads/2012/01/williamsburg-brige-approach-1-210x158.jpg' />" data-original-title="Name of Passenger"><h1 class="seat-overlay">A3</h1>

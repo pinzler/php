@@ -19,7 +19,7 @@ if(isset($_REQUEST['flight']))
 	$rowcount =  mysql_num_rows($result);
 	if($rowcount==0)
 	{
-		echo "All the seats are empty.";
+		header("location:flight.php?flight=".$flight);
 	}
 	else
 	{	

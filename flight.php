@@ -1,3 +1,21 @@
+<html>
+  <head>
+    <title>Who Do We Eat Next?</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .seat {height:140px; background-color:green; margin-bottom: 1em; }
+    .seat-overlay {color: red;  margin-top: 0; padding-left: 45px; padding-top: 0; position: absolute; width: 45px; }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+
+		<h1>Who Do We Eat Next?</h1>
+
+
+
 <?php
 
 $host=$_ENV['OPENSHIFT_DB_HOST']; // Host name 
@@ -13,11 +31,10 @@ mysql_select_db("$db_name")or die("cannot select DB");
 if(isset($_REQUEST['flight']))
 {
 	$flight = $_REQUEST['flight'];	
-	echo $flight.":<BR>";
+	//echo $flight.":<BR>";
 	if(isset($_REQUEST['seat']))
 	{
 		
-
 		$flight = $_REQUEST['flight'];
 		$seat = $_REQUEST['seat'];
 		$name = $_REQUEST['name'];
@@ -63,30 +80,63 @@ if(isset($_REQUEST['flight']))
 		  'twitter' => $row['twitter']    
 	      );
 	}
+	$countseats = 1;
 	foreach ($seats as $seatkey) {
 		$checkval = true;
+		if($countseats==1)
+				   		echo '<div class="row"><div class="span2 seat" href="#" '; 
+					if($countseats==2 || $countseats==4)
+						echo '<div class="span2 seat" href="#" ';
+					if($countseats==3)
+						echo '<div class="span2 offset3 seat" href="#" ';
+					
+
 		foreach ($filledseats as $fskey) {
+					
+			
 			if($seatkey == $fskey['seat'])
 				{	
+				    
 					$tempseat=$seatkey;
 					$checkval = false;
 					$tempname = $fskey['name'];
 					$tempimage = $fskey['image'];
 					if ($fskey['eaten']==0)
 					{
-						echo $seatkey.": ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
-						echo "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Edit This Seat' /></form><BR>" ;
+						$formbutt = "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Edit This Seat' /></form>";
+
+						echo 'rel="popover" data-content="<i>'.$fskey['option1']."<BR>".$fskey['option2']."<BR>".$fskey['notes']."<BR></i>".$formbutt;
+						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'</h1><img src="'.$fskey['image'].'" /></div>';
+						
+						//echo $seatkey.": ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
+						//echo "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Edit This Seat' /></form><BR>" ;
 					}
 					else
-						echo "EATEN: ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
+						{
+						echo 'rel="popover" data-content="<i>'.$fskey['option1']."<BR>".$fskey['option2']."<BR>".$fskey['notes']."<BR></i>";
+						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'- EATEN</h1><img src="'.$fskey['image'].'" /></div>';
+						//echo "EATEN: ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
+
+						}
 						
 				}	
 			}
 		if ($checkval)
 				{	
 					$tempseat = $seatkey;
-					echo $seatkey.": <form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Fill This Seat' /></form><BR>";
-				}	
+					$formbutt = "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Fill This Seat' /></form>";
+					//echo $seatkey.": <form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Fill This Seat' /></form><BR>";
+					echo '>';
+					echo '<h1 class="seat-overlay">'.$seatkey.'</h1><br>'.$formbutt.'</div>';
+						
+				}
+				if($countseats==4)
+						echo '</div>';
+				$countseats++;
+				if($countseats==5)
+					$countseats=1;
+				
+						
 
 	}
 
@@ -95,3 +145,16 @@ if(isset($_REQUEST['flight']))
 else
 	header("location:index.php");
 ?>
+
+ </div> <!-- /container -->
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+	<script>  
+	$(function ()  
+	{ $(".seat").popover();  
+	});
+	</script>     
+  </body>
+</html>

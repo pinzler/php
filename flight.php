@@ -68,6 +68,7 @@ if(isset($_REQUEST['flight']))
 		foreach ($filledseats as $fskey) {
 			if($seatkey == $fskey['seat'])
 				{	
+					$tempseat=$seatkey;
 					$checkval = false;
 					$tempname = $fskey['name'];
 					$tempimage = $fskey['image'];

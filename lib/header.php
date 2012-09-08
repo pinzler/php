@@ -28,7 +28,7 @@
     .seat-overlay {color: #fd0091;  margin-top: 0; padding-left: 45px; padding-top: 0; position: absolute; width: 45px; }
     header {border-bottom:5px solid #E64395;}
     
-    .popover-title {background-color:#233D92; color:#fd0091; }
+    .popover-title {background-color: #E3E3E3; color: #233D92; font-size: 18px; font-weight: bold; }
     
    /* Footer
 -------------------------------------------------- */

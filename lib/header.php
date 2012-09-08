@@ -25,6 +25,7 @@
     padding-top: 40px;}
     #hdr-container {background:#fff; width: 99%; padding-left: 0; }
     .seat {height:140px; background-color:#E3E3E3; margin-bottom: 1em; }
+    .seat img {height: auto; max-width: 100%; min-height: 100%; min-width: 100%;}
     .seat-overlay {color: #fd0091;  margin-top: 0; padding-left: 45px; padding-top: 0; position: absolute; width: 45px; }
     header {border-bottom:5px solid #E64395;}
     

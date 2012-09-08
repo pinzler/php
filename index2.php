@@ -1,7 +1,7 @@
 <?php
 include "lib/header.php";
 ?>
-
+   <div id="main" class="container">
 <div class="row">
 		<div class="span10" style="margin-bottom:2em; "><p class="well">Choose carefully. You never know what's inside...</p></div>
 		
@@ -20,8 +20,8 @@ include "lib/header.php";
 		</div>
 		
 		<div class="row">
-		<div class="span4" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div>
-		<div class="span4 offset2" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div>
+		<div class="span4 first-class"></div>
+		<div class="span4 offset2 first-class"></div>
 		</div>
 		
 		<div class="row">

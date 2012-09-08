@@ -13,10 +13,11 @@ mysql_select_db("$db_name")or die("cannot select DB");
 if(isset($_REQUEST['flight']))
 {
 	$flight = $_REQUEST['flight']; 
-	$seats = array("1A", "1B", "1C", "1D","2A", "2B", "2C", "2D","3A", "3B", "3C", "3D","4A", "4B", "4C", "4D","5A", "5B", "5C", "5D","6A", "6B", "6C", "6D");
+	$seats = array("1A", "1B", "1C", "1D","2A", "2B", "2C", "2D","3A", "3B", "3C", "3D");
 	$query = "select * from $tbl_name where flight = '$flight';";
 	$result = mysql_query($query);
 	$rowcount =  mysql_num_rows($result);
+
 	if($rowcount==0)
 	{
 		header("location:flight.php?flight=".$flight);
@@ -40,13 +41,15 @@ if(isset($_REQUEST['flight']))
 var dataTest = [];
 var answers = [];
 var voters = [];
-
+var flight = "<?php echo $flight; ?>";
 var voteCount=0;
 
-  function updateArr(seat) {
-    dataTest[seat]++;
+  function updateArr(seat, voter) {
+    dataTest[seat][0]++;
     voteCount++;
     document.getElementById(seat).innerHTML=dataTest[seat];
+    $.post("twitter.php", { handle: dataTest[seat][1], flight: flight, number: voter } );
+        
   }
         
 function checkAns() {
@@ -65,7 +68,8 @@ function checkAns() {
 		      'option1' => $row['option1'],
 		      'option2' => $row['option2'],
 		      'notes' => $row['notes'],
-		      'eaten' => $row['eaten']
+		      'eaten' => $row['eaten'],
+		      'twitter' => $row['twitter']
 		      );
 		}
 		foreach ($seats as $seatkey) {
@@ -75,10 +79,14 @@ function checkAns() {
 					{
 						$tempseat = $fskey['seat'];
 						$tempname = $fskey['name'];
+						$tempimage = $fskey['iamge'];
+						if ($fskey['twitter'] != "")
+							$handle = $fskey['twitter'];
+						else $handle = $tempname;
 						$checkval = false;
 						?>
 						answers.push("<?php echo $tempseat; ?>");
-   						dataTest["<?php echo $tempseat; ?>"] = 0;
+   						dataTest["<?php echo $tempseat; ?>"] = [0, "<?php echo $handle; ?>", "<?php echo $tempname; ?>", "<?php echo $tempimage; ?>"];
    						$(listA).append('<?php echo $tempseat; ?>' +': ' + '<?php echo $tempname; ?>' + '<div id="<?php echo $tempseat; ?>"></div><BR>');
 
 						<?php
@@ -131,15 +139,33 @@ function processVote(vote)
  if ($.inArray(votenum, answers) != -1 )
       {
         if (checkOnce) {
-          updateArr(votenum);
+          updateArr(votenum, voter);
           voters.push(voter);
-        }
+          }
       }
       else
       $('<span/>').text(voter +': ' + votenum + ' is not a valid option\n')
                       .appendTo(events);
  
      
+}
+
+function endvote() 
+{
+		var tempIndex = "";
+		var highscore = -1;
+		for(var index in dataTest) {
+		if (dataTest[index][0] > highscore)
+		{
+			tempIndex=index;
+			highscore = dataTest[index][0] 
+		}
+		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!");
+		$.post("twitter.php", { handle: dataTest[seat][1], flight: flight, win: tempIndex } );
+
+		window.location.href = "flight.php?flight="+flight;
+		}
+
 }
 
 	var events;
@@ -184,6 +210,9 @@ SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY <BR><BR>
 </div>
 
 <BR><BR>
+	<button onclick="endvote()">End Voting!</button>
+<BR><BR>
+
 
 <div id="events2">
 <pre id="events"></pre>

@@ -47,7 +47,7 @@ var voteCount=0;
   function updateArr(seat, voter) {
     dataTest[seat][0]++;
     voteCount++;
-    document.getElementById(seat).innerHTML=dataTest[seat];
+    document.getElementById(seat).innerHTML=dataTest[seat][0];
     $.post("twitter.php", { handle: dataTest[seat][1], flight: flight, number: voter } );
         
   }
@@ -79,7 +79,7 @@ function checkAns() {
 					{
 						$tempseat = $fskey['seat'];
 						$tempname = $fskey['name'];
-						$tempimage = $fskey['iamge'];
+						$tempimage = $fskey['image'];
 						if ($fskey['twitter'] != "")
 							$handle = $fskey['twitter'];
 						else $handle = $tempname;
@@ -161,7 +161,7 @@ function endvote()
 			highscore = dataTest[index][0] 
 		}
 		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!");
-		$.post("twitter.php", { handle: dataTest[seat][1], flight: flight, win: tempIndex } );
+		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 
 		window.location.href = "flight.php?flight="+flight;
 		}

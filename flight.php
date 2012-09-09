@@ -149,7 +149,7 @@ if(isset($_REQUEST['flight']))
 
 	}
 
-	echo '<div id="submit-wrap"><form name="govote" action="vote.php" method="post"><input type="hidden" name="flight" value="'.$flight.'"/><input class="btn btn-danger btn-large span5 eat-button" type="submit" value="Who Do We Eat Next!" /></form></div>';
+	echo '<div id="submit-wrap"><form name="govote" action="vote.php" method="post"><input type="hidden" name="flight" value="'.$flight.'"/><input class="btn btn-danger btn-large span5 eat-button" type="submit" value="Who Do We Eat Next?" /></form></div>';
 }
 else
 	header("location:index.php");

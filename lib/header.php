@@ -60,9 +60,12 @@
   </head>
   <body>
   <header class="jumbotron subhead" id="overview">
-  <div class="container" id="hdr-container">
-  	<div class="pull-right well well-large" id="hdr-right"><h2>Who Do We Eat Next?</h2><p>Your flight is stuck on the runway for 6 hours. Times are tough. We're hungry, but there's no food. So who do we eat?</p></div>
-    <img src="/img/oceanic_logo.gif" width="400" />
+  <div id="hdr-container" class="container">
+	  <div class="row"> 
+		  <div class="span4"><img src="/img/oceanic_logo.gif"> </div>	
+		  <div id="hdr-right" class="span8 well well-large"><h2>Who Do We Eat Next?</h2><p>Your flight is stuck on the runway for 6 hours. Times are tough. We're hungry, but there's no food. So who do we eat?</p></div>
+    
+</div>
   </div>
 </header>
  

@@ -43,9 +43,9 @@ body {background-image:none; }
       color: '#0d010d'
     },
     tweets: {
-      background: '#000000',
-      color: '#cae6db',
-      links: '#4aed05'
+      background: '#ffffff',
+      color: '',
+      links: ''
     }
   },
   features: {

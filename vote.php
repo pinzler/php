@@ -239,7 +239,7 @@ function endvote()
   </script>
  <div id="main" class="container">
 <div class="row">
-		<div class="span10" style="margin-bottom:2em; "><p class="well">SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY</p></div>
+		<div class="span10" style="margin-bottom:2em; "><div class="well"><h4>SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY</h4></div></div>
 		
 		</div>
 
@@ -249,7 +249,7 @@ function endvote()
 </div>
 
 <BR><BR>
-	<button onclick="endvote()">End Voting!</button>
+	<button class="btn btn-danger" onclick="endvote()">End Voting!</button>
 <BR><BR>
 
 
@@ -257,13 +257,9 @@ function endvote()
 <pre id="events"></pre>
 </div>  
 
-<BR><BR>
-
-
 <div id="checkboxes" >
 <form name="myboxes">
-  <BR>
-<input type="checkbox" id="once" checked/> Allow multiple votes per person<br />
+<label class="checkbox"><input type="checkbox" id="once" checked/> Allow multiple votes per person</label>
 </form>
 </div>
 

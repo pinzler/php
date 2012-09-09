@@ -47,10 +47,16 @@ $tempimage = $filledseats[0]['image'];
 ?>
 
 <div class="row">
-		<div class="span10" style="margin-bottom:2em; "><div class="well"><img style="float:left; margin-bottom:0;" class="pink-border-profile" src="<?php echo $tempimage; ?>"><h3 style="float:right; width:500px">We are going to eat <?php echo $tempname; ?>!</h3><h4 style="float:right; width:500px"> (That's some good eatin'!)</h4> <h4 style="float:right; width:500px">Your score was <?php echo $votes; ?>.</h4>
-<p style="clear:both; padding:0;margin:0;"> </p></div></div>
-	
+	<div class="span10" style="margin-bottom:2em; ">
+		<div class="well">
+			<img style="float:left; margin-bottom:0;" class="pink-border-profile" src="<?php echo $tempimage; ?>">
+			<h3 style="float:right; width:500px">We are going to eat <?php echo $tempname; ?>!</h3>
+			<h4 style="float:right; width:500px"> (That's some good eatin'!)</h4>
+			<h4 style="float:right; width:500px">Their score was <?php echo $votes; ?>.</h4>
+			<p style="clear:both; padding:0;margin:0;"> </p>
 		</div>
+	</div>
+</div><!- /row ->
 
 
 <div id="myCarousel" class="carousel slide">

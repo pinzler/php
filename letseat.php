@@ -59,7 +59,7 @@ $tempimage = $filledseats[0]['image'];
 </div><!- /row ->
 
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel well well-large slide span9">
   <!-- Carousel items -->
   <div class="carousel-inner">
                  <div class="active item">
@@ -90,7 +90,7 @@ $tempimage = $filledseats[0]['image'];
 </div>
 
 
-<div style="margin-left: auto; margin-right: auto; margin-top: 2em; width: 220px;"><a class="btn btn-danger btn-large" href = "flight.php?flight=Oceanic815">Who Do We Eat Next?!?!?!</a></div>
+<div style="margin-left: auto; margin-right: auto; margin-top: 2em; width: 220px;"><a class="btn btn-danger btn-large" href = "flight.php?flight=Oceanic815">Who Do We Eat Next?</a></div>
 
 </div>
 

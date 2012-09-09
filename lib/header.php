@@ -21,7 +21,7 @@
     #hdr-container {background:#fff; width: 99%; padding-left: 0; }
     .seat {height:140px; background-color:#E3E3E3; margin-bottom: 1em; position:relative; }
     .skull {background: none repeat scroll 0 0 #fff; left: 0; opacity: 0.6; position: absolute;}
-    .seat img {height: auto; max-width: 100%; min-height: 100%; max-height:100%; min-width: 100%;}
+    .seat img {height: auto; max-width: 100%; min-height: 100%; max-height:100%; min-width: 100%; border: 2px solid #E64395;}
     .seat-overlay {  color: #FD0091;
     margin-left: 2px;
     margin-top: 99px;
@@ -31,6 +31,13 @@
     text-shadow: 2px 2px 2px #000000;
     width: 46px; }
     header {border-bottom:5px solid #E64395;}
+    .vote-overlay {bottom: 12px;
+    color: #FD0091;
+    font-size: 32px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+    text-shadow: 2px 2px 2px #000000;}
     
     .popover-title {background-color: #E3E3E3; color: #233D92; font-size: 18px; font-weight: bold; }
     #hdr-right {max-width: 800px; margin-top: 1em;}

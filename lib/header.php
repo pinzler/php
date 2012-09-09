@@ -20,7 +20,7 @@
     #main {background:#00B1C4; padding-top: 1em; border-left: 5px solid #E64395; border-right: 5px solid #E64395;  padding-bottom: 200px; padding-top: 40px;}
     #hdr-container {background:#fff; width: 99%; padding-left: 0; }
     .seat {height:140px; background-color:#E3E3E3; margin-bottom: 1em; position:relative; }
-    .skull {background: none repeat scroll 0 0 #fff; left: 0; opacity: 0.6; position: absolute;}
+    .skull {background: none repeat scroll 0 0 #fff; left: 0; opacity: 0.6; position: absolute; top:0; }
     .seat img {height: auto; max-width: 100%; min-height: 100%; max-height:100%; min-width: 100%; border: 2px solid #E64395;}
     .seat-overlay {  color: #FD0091;
     margin-left: 2px;

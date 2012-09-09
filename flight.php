@@ -2,6 +2,8 @@
 include "lib/header.php";
 ?>
 
+   <div id="main" class="container">
+
 <div class="row">
 		<div class="span10" style="margin-bottom:2em; "><p class="well">Choose carefully. You never know what's inside...</p></div>
 		
@@ -107,7 +109,7 @@ if(isset($_REQUEST['flight']))
 					else
 						{
 						echo 'rel="popover" data-content="<i>'.$fskey['option1']."<BR>".$fskey['option2']."<BR>".$fskey['notes']."<BR></i>";
-						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'- EATEN</h1><img src="'.$fskey['image'].'" /></div>';
+						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'</h1><img src="'.$fskey['image'].'" /><img class="skull" src="/img/skull_140x140.png" /></div>';
 						//echo "EATEN: ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
 
 						}

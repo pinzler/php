@@ -7,6 +7,12 @@ $password="6j2YHGr4jnng"; // Mysql password
 $db_name="whodoweeatnext"; // Database name 
 $tbl_name="seats"; // Table name 
 
+// Connect to server and select databse.
+mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+mysql_select_db("$db_name")or die("cannot select DB");
+
+
+
 ?>
 <style>
 body {background-image:none; }

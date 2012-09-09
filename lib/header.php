@@ -63,7 +63,7 @@
   <div id="hdr-container" class="container">
 	  <div class="row"> 
 		  <div class="span4"><img src="/img/oceanic_logo.gif"> </div>	
-		  <div id="hdr-right" class="span6 row well well-small"><img class="span1" style="margin-right:1em" src="/img/plastic_knife__fork_and_spoon-for-twitter.png"><h2 class="">Who Do We Eat Next?</h2></div>   
+		  <div id="hdr-right" class="span6 row well well-small pull-right"><img class="span1" style="margin-right:1em" src="/img/plastic_knife__fork_and_spoon-for-twitter.png"><h2 class="">Who Do We Eat Next?</h2></div>   
 </div>
   </div>
 </header>

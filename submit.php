@@ -1,7 +1,16 @@
 <?php
+include "lib/header.php";
+?>
+<style>
+body {background-image:none; }
+#main {padding-top:0; }
+</style>
+<div class="container" id="main">
+<h4>Edit</h4>
+<?php
 $flight = $_REQUEST['flight'];	
 $seat = $_REQUEST['seat'];	
-echo $flight." - ".$seat.":<BR>";
+echo "<h3>".$flight." - ".$seat.":</h3>";
 
 ?>
 
@@ -34,24 +43,24 @@ else
 
 ?>
 
-Name: <input type="text" name="name" /><BR>
-Image URL: <input type="text" name="image" /><BR>
+<label>Name:</label><input type="text" name="name" />
+<label>Image URL:</label> <input type="text" name="image" />
 
 <?php
 }
 ?>
 
 
-Bad: <input type="radio" name="option1" id="option1" value="Snores">Snores 
-<input type="radio" name="option1" id="option1" value="Drools">Drools 
-<input type="radio" name="option1" id="option1" value="Loud">Loud 
-<input type="radio" name="option1" id="option1" value="Other Thing">Other Thing 
-<BR>
-Worse: <input type="radio" name="option2" id="option2" value="Helps with bags">Helps with Bags 
-<input type="radio" name="option2" id="option2" value="Other 2">Other 2 
-<input type="radio" name="option2" id="option2" value="Other 3">Other 3  
-<input type="radio" name="option2" id="option2" value="Other 4">Other 4 
-<BR>
-Notes: <input type="text" name="notes" /><BR>
-<input type="submit" value="Submit" />
+<label>Bad:</label>
+<label class="radio inline"><input type="radio" name="option1" id="option1" value="Overly Talkative"><img src='/img/overly-talkative.jpg' /> </label> 
+<label class="radio inline"><input type="radio" name="option1" id="option1" value="Sleeping on You"><img src='/img/sleeping-on-you.jpg' /> </label>
+<label class="radio inline"><input type="radio" name="option1" id="option1" value="Talking on Cell Phone"><img src='/img/talking-on-cell.png' /> </label>
+<label class="radio inline"><input type="radio" name="option1" id="option1" value="Tweeting in Flight"><img src='/img/tweeting-in-flight.png' /> </label>
+<br><br>
+<label>Notes:</label><input type="text" name="notes" /><BR>
+<button  value="Submit" type="submit" class="btn">Submit</button>
 </form>
+</div>
+<?php 
+include "lib/footer.php";
+?>

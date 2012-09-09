@@ -26,10 +26,11 @@ $twitterObj = new EpiTwitter($consumer_key, $consumer_secret);
 if (isset($_REQUEST['win']))
 	{
 	$seat = $_REQUEST['win'];
-	$update = "Hey @pinzler, you are about to get eaten on flight ".$flight."!";
+	$update = "TEST @pinzler, you are about to get eaten on flight ".$flight."!";
 	//$update = "Hey ".$handle.", you are about to get eaten on flight ".$flight."!";
 	mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 	mysql_select_db("$db_name")or die("cannot select DB");
+	
 	$sqlins = "UPDATE $tbl_name SET eaten=1 WHERE flight = '$flight' AND seat = '$seat';";
 
 	$resultins=mysql_query($sqlins);
@@ -38,7 +39,7 @@ if (isset($_REQUEST['win']))
 else
 	{
 	$numbr = $_REQUEST['number'];
-	$update = "Hey @pinzler, you just got a vote from ".$numbr." to be eaten on flight ".$flight."!";
+	$update = "TEST @pinzler, you just got a vote from ".$numbr." to be eaten on flight ".$flight."!";
 	//$update = "Hey ".$handle.", you just got a vote to be eaten on flight ".$flight."!";
 	}
 

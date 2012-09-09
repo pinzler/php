@@ -10,6 +10,9 @@ $tbl_name="seats"; // Table name
 mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 mysql_select_db("$db_name")or die("cannot select DB");
 
+
+$divrows = "";
+
 if(isset($_REQUEST['flight']))
 {
 	$flight = $_REQUEST['flight']; 
@@ -190,6 +193,7 @@ function endvote()
 		}
 		}
 		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!");
+		
 		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 
 		window.location.href = "flight.php?flight="+flight;

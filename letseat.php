@@ -56,13 +56,27 @@ $tempimage = $filledseats[0]['image'];
 <div id="myCarousel" class="carousel slide">
   <!-- Carousel items -->
   <div class="carousel-inner">
-                  <div class="active item">
-                    <img src="http://www.whodoweeatnext.com/img/eatfirst.png" alt="">
+                 <div class="active item">
+                    <img src="/img/eatfirst.png" alt="">
                   </div>
                   <div class="item">
-                    <img src="http://www.whodoweeatnext.com/img/24b.png" alt="">
+                    <img src="/img/24b.png" alt="">
                   </div>
-                  
+                  <div class="item">
+                    <img src="/img/delicious.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/i-want-human.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/im-voting-to-eat-you.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/organic.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/flavor-flav.png" alt="">
+                  </div>
   </div>
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

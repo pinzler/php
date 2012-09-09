@@ -52,9 +52,10 @@ function checkAns() {
   
   var str = "<?php echo $flight; ?>";
   
-   $(listA).append('<strong>'+ str + '</strong><BR><BR>');
+  // $(listA).append('<strong>'+ str + '</strong><BR><BR>');
     
 <?php
+		$divrows = "";
 		$filledseats = array();
 		while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		      $filledseats[] = array(
@@ -74,21 +75,14 @@ function checkAns() {
 			$checkval = true;
 			
 					if($countseats==1)
-				   		{ ?>
-				   		$(listA).append('<div class="row"><div class="span2 seat" href="#"><h1 class="seat-overlay">'); 
-						<?php }
-					if($countseats==2 )
-					{ ?>
-						$(listA).append('<div class="span2 seat" href="#"><h1 class="seat-overlay">');
-					<?php }
+				   		$divrows.='<div class="row"><div class="span2 seat" href="#"><h1 class="seat-overlay">'; 
+					if($countseats==2)
+						$divrows.='<div class="span2 seat" href="#"><h1 class="seat-overlay">';
 					if($countseats==3)
-					{ ?>
-						$(listA).append('<div class="span2 offset2 seat" href="#"><h1 class="seat-overlay">');
-					<?php }
+						$divrows.='<div class="span2 offset2 seat" href="#"><h1 class="seat-overlay">';
 					if($countseats==4)
-					{ ?>
-						$(listA).append('<div class="span2 seat" href="#"><h1 class="seat-overlay">');
-					<?php }
+						$divrows.='<div class="span2 seat" href="#"><h1 class="seat-overlay">';
+					
 
 			foreach ($filledseats as $fskey) {
 				if($seatkey == $fskey['seat'] && $fskey['eaten']==0)
@@ -102,11 +96,12 @@ function checkAns() {
 						$checkval = false;
 						?>
 						
-   						$(listA).append('<?php echo $tempseat; ?>' +'<BR><BR><BR>' + '<div id="<?php echo $tempseat; ?>">0</div></h1><img src="<?php echo $tempimage; ?>" /></div>');
    						answers.push("<?php echo $tempseat; ?>");
    						dataTest["<?php echo $tempseat; ?>"] = [0, "<?php echo $handle; ?>", "<?php echo $tempname; ?>", "<?php echo $tempimage; ?>"];
    						
 						<?php
+						$divrows=$divrows.$tempseat.' - <div id="'.$tempseat.'">0</div></h1><img src="'.$tempimage.'" /></div>';
+   						
 					}	
 				else if ($seatkey == $fskey['seat'] && $fskey['eaten']==1)
 					{	
@@ -115,31 +110,27 @@ function checkAns() {
 						$checkval = false;
 						?>
 
-						$(listA).append('<?php echo $tempseat; ?>' +'<BR><BR><BR></h1><img src="<?php echo $tempimage; ?>" /><img class="skull" src="/img/skull_140x140.png" /></div>');
-
 						<?php
+						$divrows= $divrows.$tempseat.'</h1><img src="'.$tempimage.'" /><img class="skull" src="/img/skull_140x140.png" /></div>';
+
 					}
 			}
 				if($checkval)
 					{
 					$tempseat = $seatkey;
-					?>
-						$(listA).append('<?php echo $tempseat; ?> - EMPTY' +'<BR><BR><BR></h1></div>');
-					<?php
+					
+						$divrows = $divrows.$tempseat.'- EMPTY<BR><BR><BR></h1></div>';
+						
 					}
 
 				if($countseats==4)
 						{
-						?>
-						$(listA).append('</div>');
-						<?php
+						$divrows.='</div>';
 						}
 				if($countseats==4 && $firstrow)
 				{
 					$firstrow=false;
-					?>
-					$(listA).append('<div class="row"><div class="span4" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div><div class="span4 offset2" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div></div>');
-					<?php
+					$divrows.='<div class="row"><div class="span4" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div><div class="span4 offset2" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div></div>';
 				}
 
 				$countseats++;
@@ -249,7 +240,7 @@ function endvote()
 
  
 <div id="list">
-
+<?php echo $divrows; ?>
 </div>
 
 <BR><BR>

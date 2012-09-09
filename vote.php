@@ -100,7 +100,7 @@ function checkAns() {
    						dataTest["<?php echo $tempseat; ?>"] = [0, "<?php echo $handle; ?>", "<?php echo $tempname; ?>", "<?php echo $tempimage; ?>"];
    						
 						<?php
-						$divrows=$divrows.$tempseat.' - <div id="'.$tempseat.'">0</div></h1><img src="'.$tempimage.'" /></div>';
+						$divrows=$divrows.$tempseat.'</h1><div id="'.$tempseat.'" class="vote-overlay">0</div><img src="'.$tempimage.'" /></div>';
    						
 					}	
 				else if ($seatkey == $fskey['seat'] && $fskey['eaten']==1)

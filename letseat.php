@@ -56,7 +56,7 @@ $tempimage = $filledseats[0]['image'];
 <div id="myCarousel" class="carousel slide">
   <!-- Carousel items -->
   <div class="carousel-inner">
-                  <div class="active item>
+                  <div class="active item">
                     <img src="http://www.whodoweeatnext.com/img/eatfirst.png" alt="">
                   </div>
                   <div class="item">

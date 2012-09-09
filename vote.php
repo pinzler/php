@@ -110,6 +110,7 @@ function checkAns() {
 					{	
 						$tempseat = $fskey['seat'];
 						$tempname = $fskey['name'];
+						$tempimage = $fskey['image'];
 						$checkval = false;
 						?>
 
@@ -189,10 +190,10 @@ function endvote()
 		if (dataTest[index][0] > highscore)
 		{
 			tempIndex=index;
-			highscore = dataTest[index][0] 
+			highscore = dataTest[index][0]; 
 		}
 		}
-		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!");
+		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!" + tempIndex + " " + flight + " " + dataTest[tempIndex][1]);
 		
 		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 

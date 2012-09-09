@@ -27,9 +27,9 @@
 	</script>  
 	
 	
-	<script>
-	
-	var isVisible = false;
+	<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+var isVisible = false;
 var clickedAway = false;
 
 $('.seat').each(function() {
@@ -56,7 +56,10 @@ $(document).click(function(e) {
     clickedAway = true;
   }
 });
-​</script>
+
+});//]]>  
+
+</script>
 	   
   </body>
 </html>

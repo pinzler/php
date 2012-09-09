@@ -78,13 +78,14 @@ if(isset($_REQUEST['flight']))
 	$firstrow=true;	
 	foreach ($seats as $seatkey) {
 		$checkval = true;
-		if($countseats==1)
+					if($countseats==1)
 				   		echo '<div class="row"><div class="span2 seat" href="#" '; 
-					if($countseats==2 || $countseats==4)
+					if($countseats==2 )
 						echo '<div class="span2 seat" href="#" ';
 					if($countseats==3)
-						echo '<div class="span2 offset2 seat" href="#" ';
-					
+						echo '<div class="span2 offset2 seat" href="#" data-placement="left" ';
+					if($countseats==4)
+						echo '<div class="span2 seat" href="#" data-placement="left" ';
 
 		foreach ($filledseats as $fskey) {
 					
@@ -137,8 +138,7 @@ if(isset($_REQUEST['flight']))
 				$countseats++;
 				if($countseats==5)
 					$countseats=1;
-				
-						
+										
 
 	}
 

@@ -24,17 +24,13 @@ if(isset($_REQUEST['flight']))
 	}
 	else
 	{	
+		include "lib/header.php";
 		?>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Who Do We Eat Next - <?php echo $flight; ?></title>
-  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="http://node-apinzler.rhcloud.com/socket.io/socket.io.js"></script>
-</head>
 
-<body>
+
+
+ <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="http://node-apinzler.rhcloud.com/socket.io/socket.io.js"></script>
 
   <script>
 
@@ -72,8 +68,28 @@ function checkAns() {
 		      'twitter' => $row['twitter']
 		      );
 		}
+		$countseats = 1;
+		$firstrow=true;	
 		foreach ($seats as $seatkey) {
 			$checkval = true;
+			
+					if($countseats==1)
+				   		{ ?>
+				   		$(listA).append('<div class="row"><div class="span2 seat" href="#"><h1 class="seat-overlay">'); 
+						<?php }
+					if($countseats==2 )
+					{ ?>
+						$(listA).append('<div class="span2 seat" href="#"><h1 class="seat-overlay">');
+					<?php }
+					if($countseats==3)
+					{ ?>
+						$(listA).append('<div class="span2 offset2 seat" href="#"><h1 class="seat-overlay">');
+					<?php }
+					if($countseats==4)
+					{ ?>
+						$(listA).append('<div class="span2 seat" href="#"><h1 class="seat-overlay">');
+					<?php }
+
 			foreach ($filledseats as $fskey) {
 				if($seatkey == $fskey['seat'] && $fskey['eaten']==0)
 					{
@@ -85,10 +101,11 @@ function checkAns() {
 						else $handle = $tempname;
 						$checkval = false;
 						?>
-						answers.push("<?php echo $tempseat; ?>");
+						
+   						$(listA).append('<?php echo $tempseat; ?>' +'<BR><BR><BR>' + '<div id="<?php echo $tempseat; ?>">0</div></h1><img src="<?php echo $tempimage; ?>" /></div>');
+   						answers.push("<?php echo $tempseat; ?>");
    						dataTest["<?php echo $tempseat; ?>"] = [0, "<?php echo $handle; ?>", "<?php echo $tempname; ?>", "<?php echo $tempimage; ?>"];
-   						$(listA).append('<?php echo $tempseat; ?>' +': ' + '<?php echo $tempname; ?>' + '<div id="<?php echo $tempseat; ?>"></div><BR>');
-
+   						
 						<?php
 					}	
 				else if ($seatkey == $fskey['seat'] && $fskey['eaten']==1)
@@ -98,8 +115,8 @@ function checkAns() {
 						$checkval = false;
 						?>
 
-						$(listA).append('<?php echo $tempseat; ?>' +': ' + '<?php echo $tempname; ?>' + '-EATEN<BR>');
-						
+						$(listA).append('<?php echo $tempseat; ?>' +'<BR><BR><BR></h1><img src="<?php echo $tempimage; ?>" /><img class="skull" src="/img/skull_140x140.png" /></div>');
+
 						<?php
 					}
 			}
@@ -107,9 +124,29 @@ function checkAns() {
 					{
 					$tempseat = $seatkey;
 					?>
-						$(listA).append('<?php echo $tempseat; ?>' +': EMPTY<BR>');
+						$(listA).append('<?php echo $tempseat; ?> - EMPTY' +'<BR><BR><BR></h1></div>');
 					<?php
 					}
+
+				if($countseats==4)
+						{
+						?>
+						$(listA).append('</div>');
+						<?php
+						}
+				if($countseats==4 && $firstrow)
+				{
+					$firstrow=false;
+					?>
+					$(listA).append('<div class="row"><div class="span4" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div><div class="span4 offset2" style="border-bottom:5px solid #E64395; margin-bottom:2em; "></div></div>');
+					<?php
+				}
+
+				$countseats++;
+				if($countseats==5)
+					$countseats=1;
+				
+
 			
 	    }
     }
@@ -204,10 +241,15 @@ function endvote()
      
     });
   </script>
+ <div id="main" class="container">
+<div class="row">
+		<div class="span10" style="margin-bottom:2em; "><p class="well">SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY</p></div>
+		
+		</div>
 
-SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY <BR><BR>
-
+ 
 <div id="list">
+
 </div>
 
 <BR><BR>
@@ -222,13 +264,16 @@ SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY <BR><BR>
 <BR><BR>
 
 
-  <div id="checkboxes" >
+<div id="checkboxes" >
 <form name="myboxes">
   <BR>
 <input type="checkbox" id="once" checked/> Allow multiple votes per person<br />
 </form>
 </div>
 
-</body>
-</html>
+</div><!-- /container -->
+    
 
+<?php 
+include "lib/footer.php";
+?>

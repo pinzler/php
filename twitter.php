@@ -27,7 +27,7 @@ if (isset($_REQUEST['win']))
 	{
 	$seat = $_REQUEST['win'];
 	$update = "TEST4 @jeffnovich, you are about to get eaten on flight ".$flight."!";
-	//$update = "Hey @".$handle.", you are about to get eaten on flight ".$flight."!";
+	//$update = "Time to eat @".$handle." on flight ".$flight."!";
 	mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 	mysql_select_db("$db_name")or die("cannot select DB");
 	

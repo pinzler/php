@@ -193,11 +193,11 @@ function endvote()
 			highscore = dataTest[index][0]; 
 		}
 		}
-		alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!" + tempIndex + " " + flight + " " + dataTest[tempIndex][1]);
+		//alert(dataTest[tempIndex][2] + " wins!  That's some good eatin'!" + tempIndex + " " + flight + " " + dataTest[tempIndex][1]);
 		
 		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 
-		window.location.href = "flight.php?flight="+flight;
+		window.location.href = "letseat.php?flight="+flight+"&seat="+tempIndex;
 		
 
 }

@@ -14,12 +14,12 @@ body {background-image:none; }
 <div class="container" id="main">
 
   <div class="row">
-    <div class="span10" style="margin-bottom:2em; "><p class="well">Coming Soon!</p>
+    <div class="span10" style="margin-bottom:2em; "><p class="well">Your flight is stuck on the runway for 6 hours. Times are tough. We're hungry, but there's no food. So who do we eat?</p>
 
 
-		<form action="flight.php" method="post">  
-		  <label>Flight:</label>
-		  <input type="text" name="flight" placeholder="Enter a flight number..."><br />
+		<form class="form-inline" action="flight.php" method="post">  
+		  <!--<label>Flight:</label>-->
+		  <input type="text" name="flight" placeholder="Enter a flight number...">
 		  <button type="submit" value="Submit" class="btn">Submit</button>
 		</form>
 	</div>
@@ -33,10 +33,25 @@ body {background-image:none; }
   <!-- Carousel items -->
   <div class="carousel-inner">
                   <div class="active item">
-                    <img src="http://www.whodoweeatnext.com/img/eatfirst.png" alt="">
+                    <img src="/img/eatfirst.png" alt="">
                   </div>
                   <div class="item">
-                    <img src="http://www.whodoweeatnext.com/img/24b.png" alt="">
+                    <img src="/img/24b.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/delicious.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/i-want-human.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/im-voting-to-eat-you.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/organic.png" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="/img/flavor-flav.png" alt="">
                   </div>
                   
   </div>

@@ -63,8 +63,7 @@
   <div id="hdr-container" class="container">
 	  <div class="row"> 
 		  <div class="span4"><img src="/img/oceanic_logo.gif"> </div>	
-		  <div id="hdr-right" class="span8 well well-large"><h2>Who Do We Eat Next?</h2><p>Your flight is stuck on the runway for 6 hours. Times are tough. We're hungry, but there's no food. So who do we eat?</p></div>
-    
+		  <div id="hdr-right" class="span6 row well well-small"><img class="span1" style="margin-right:1em" src="/img/plastic_knife__fork_and_spoon-for-twitter.png"><h2 class="">Who Do We Eat Next?</h2></div>   
 </div>
   </div>
 </header>

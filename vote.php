@@ -197,7 +197,8 @@ function endvote()
 		
 		$.post("twitter.php", { handle: dataTest[tempIndex][1], flight: flight, win: tempIndex } );
 
-		window.location.href = "letseat.php?flight="+flight+"&seat="+tempIndex;
+		window.location.href = "letseat.php?flight="+flight+"&seat="+tempIndex+"&votes="+highscore;
+	
 		
 
 }

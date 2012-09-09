@@ -22,20 +22,21 @@
     .seat {height:140px; background-color:#E3E3E3; margin-bottom: 1em; position:relative; }
     .skull {background: none repeat scroll 0 0 #fff; left: 0; opacity: 0.6; position: absolute;}
     .seat img {height: auto; max-width: 100%; min-height: 100%; max-height:100%; min-width: 100%;}
-    .seat-overlay { background: none repeat scroll 0 0 #FFFFFF;
-    color: #FD0091;
-    margin-left: 45px;
-    margin-top: 6px;
+    .seat-overlay {  color: #FD0091;
+    margin-left: 2px;
+    margin-top: 99px;
     padding-left: 6px;
     padding-top: 0;
     position: absolute;
-    width: 46px;}
+    text-shadow: 2px 2px 2px #000000;
+    width: 46px; }
     header {border-bottom:5px solid #E64395;}
     
     .popover-title {background-color: #E3E3E3; color: #233D92; font-size: 18px; font-weight: bold; }
     #hdr-right {max-width: 800px; margin-top: 1em;}
     .first-class {border-bottom:5px solid #E64395; margin-bottom:2em; }
-    .radio img {width: 166px; }
+    .radio img {border: 2px solid #E64395; width: 162px; }
+    .pink-border-profile {border: 2px solid #E64395; height: 220px; margin-bottom: 2em; }
     
    /* Footer -------------------------------------------------- */
 

@@ -6,11 +6,11 @@ body {background-image:none; }
 #main {padding-top:0; }
 </style>
 <div class="container" id="main">
-<h4>Edit</h4>
+
 <?php
 $flight = $_REQUEST['flight'];	
 $seat = $_REQUEST['seat'];	
-echo "<h3>".$flight." - ".$seat.":</h3>";
+echo "<h3>Flight: ".$flight." - ".$seat."</h3>";
 
 ?>
 
@@ -31,8 +31,8 @@ $tempimg = $_REQUEST['image'];
 
 <input type="hidden" name="name" value="<?php echo $tempname ?>" />
 <input type="hidden" name="image" value="<?php echo $tempimg ?>"/>
-Name: <?php echo $tempname ?> <BR>
-<img src="<?php echo $tempimg ?>"> <BR>
+<h2>Name: <?php echo $tempname ?></h2>
+<img class="img-rounded pink-border-profile" src="<?php echo $tempimg ?>">
 
 <?php
 
@@ -51,7 +51,7 @@ else
 ?>
 
 
-<label>Bad:</label>
+<label>Bad Traits:</label>
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Overly Talkative"><img src='/img/overly-talkative.jpg' /> </label> 
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Sleeping on You"><img src='/img/sleeping-on-you.jpg' /> </label>
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Talking on Cell Phone"><img src='/img/talking-on-cell.png' /> </label>

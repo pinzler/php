@@ -18,6 +18,12 @@
 	$(function ()  
 	{ $(".seat").popover();  
 	});
+	</script> 
+	
+	<script>  
+	$(function ()  
+	{ $('.carousel').carousel();  
+	});
 	</script>     
   </body>
 </html>

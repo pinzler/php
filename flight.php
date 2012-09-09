@@ -101,7 +101,7 @@ if(isset($_REQUEST['flight']))
 					{
 						$formbutt = "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' class='btn' value='Edit This Seat' /></form>";
 
-						echo 'rel="popover" data-content="<p>'.$fskey['option1']."</p><p>".$fskey['notes']."</p>".$formbutt;
+						echo 'rel="popover" data-content="<ul><li>'.$fskey['option1']."</li><li>".$fskey['notes']."</li></ul>".$formbutt;
 						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'</h1><img src="'.$fskey['image'].'" /></div>';
 						
 						//echo $seatkey.": ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];

@@ -39,6 +39,9 @@
     right: 0;
     text-shadow: 2px 2px 2px #000000;}
     
+    #submit-wrap {margin: 2em auto 0; width: 366px; }
+    .eat-button {height:90px; font-size: 34px; }
+    
     .popover-title {background-color: #E3E3E3; color: #233D92; font-size: 18px; font-weight: bold; }
     .popover-content img {max-height: 250px;}
     #hdr-right {max-width: 800px; margin-top: 1em;}

@@ -32,7 +32,7 @@ if(isset($_REQUEST['flight']))
 
 
 
- <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+ 
   <script type="text/javascript" src="http://node-apinzler.rhcloud.com/socket.io/socket.io.js"></script>
 
   <script>
@@ -240,7 +240,7 @@ function endvote()
   </script>
  <div id="main" class="container">
 <div class="row">
-		<div class="span10" style="margin-bottom:2em; "><div class="well"><h4>SMS your seat number choice to (402) 509-8669 or (402) 50-YUMMY</h4></div></div>
+		<div class="span10" style="margin-bottom:2em; "><div class="well"><h4>SMS your seat number choice to:</h4> <h1>(402) 509-8669 or (402) 50-YUMMY</h1></div></div>
 		
 		</div>
 

@@ -14,16 +14,49 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
-	<script>  
+	<!--<script>  
 	$(function ()  
 	{ $(".seat").popover();  
 	});
-	</script> 
+	</script> -->
 	
 	<script>  
 	$(function ()  
 	{ $('.carousel').carousel();  
 	});
-	</script>     
+	</script>  
+	
+	
+	<script>
+	
+	var isVisible = false;
+var clickedAway = false;
+
+$('.seat').each(function() {
+    $(this).popover({
+        html: true,
+        trigger: 'manual'
+    }).click(function(e) {
+        $(this).popover('show');
+        isVisible = true;
+        //e.preventDefault();
+    });
+});
+
+$(document).click(function(e) {
+  if(isVisible & clickedAway)
+  {
+     $('.seat').each(function() {
+          $(this).popover('hide');
+     });
+    isVisible = clickedAway = false;
+  }
+  else
+  {
+    clickedAway = true;
+  }
+});
+​</script>
+	   
   </body>
 </html>

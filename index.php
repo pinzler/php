@@ -17,7 +17,7 @@ body {background-image:none; }
     <div class="span10" style="margin-bottom:2em; "><p class="well">Coming Soon!</p>
 
 
-<form>  
+<form action="flight.php" method="post">  
   <label>Flight:</label>
   <input type="text" name="flight" placeholder="Enter a flight number..."><br />
   <button type="submit" value="Submit" class="btn">Submit</button>

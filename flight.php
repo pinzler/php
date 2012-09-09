@@ -97,8 +97,8 @@ if(isset($_REQUEST['flight']))
 					$checkval = false;
 					$tempname = $fskey['name'];
 					$tempimage = $fskey['image'];
-					$tempoption = '<l1>'.$fskey['option1'].'</li>';
-					$tempnotes = '<l1>'.$fskey['notes'].'</li>';
+					$tempoption = '<li>'.$fskey['option1'].'</li>';
+					$tempnotes = '<li>'.$fskey['notes'].'</li>';
 					
 					if ($fskey['eaten']==0)
 					{

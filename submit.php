@@ -3,7 +3,6 @@ include "lib/header.php";
 ?>
 <style>
 body {background-image:none; }
-#main {padding-top:0; }
 </style>
 <div class="container" id="main">
 
@@ -14,7 +13,7 @@ body {background-image:none; }
 			<?php
 			$flight = $_REQUEST['flight'];	
 			$seat = $_REQUEST['seat'];	
-			echo "<h3>Flight: ".$flight." - ".$seat."</h3>";
+			echo "<h3 style='margin-top:0; margin-bottom:0; '>Flight: ".$flight."</h3><h4 style='margin-top:0;'>".$seat."</h4>";
 			
 			?>
 			
@@ -38,7 +37,7 @@ body {background-image:none; }
 			<img style="float:left; margin-bottom:0;" class="pink-border-profile" src="<?php echo $tempimg ?>">
 			<h3 style="float:right; width:500px">Name: <?php echo $tempname ?></h3>
 			<p style="float:right; width:500px">Next, choose the passenger's flaws and leave any additional notes.</p>
-			
+			<p style="clear:both; padding:0;margin:0;"> </p>
 			<?php
 			
 			}

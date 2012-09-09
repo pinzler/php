@@ -99,9 +99,9 @@ if(isset($_REQUEST['flight']))
 					$tempimage = $fskey['image'];
 					if ($fskey['eaten']==0)
 					{
-						$formbutt = "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' value='Edit This Seat' /></form>";
+						$formbutt = "<form name='".$tempseat."' action='submit.php' method='post'><input type='hidden' name='name' value='".$tempname."' /><input type='hidden' name='image' value='".$tempimage."' /><input type='hidden' name='flight' value='".$flight."' /><input type='hidden' name='seat' value='".$tempseat."' /><input type='submit' class='btn' value='Edit This Seat' /></form>";
 
-						echo 'rel="popover" data-content="<i>'.$fskey['option1']."<BR>".$fskey['option2']."<BR>".$fskey['notes']."<BR></i>".$formbutt;
+						echo 'rel="popover" data-content="<p>'.$fskey['option1']."</p><p>".$fskey['notes']."</p>".$formbutt;
 						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'</h1><img src="'.$fskey['image'].'" /></div>';
 						
 						//echo $seatkey.": ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
@@ -109,7 +109,7 @@ if(isset($_REQUEST['flight']))
 					}
 					else
 						{
-						echo 'rel="popover" data-content="<i>'.$fskey['option1']."<BR>".$fskey['option2']."<BR>".$fskey['notes']."<BR></i>";
+						echo 'rel="popover" data-content="<p>'.$fskey['option1']."</p><p>".$fskey['notes']."</p>";
 						echo "<img src='".$tempimage."' />".'" data-original-title="'.$tempname.'"><h1 class="seat-overlay">'.$seatkey.'</h1><img src="'.$fskey['image'].'" /><img class="skull" src="/img/skull_140x140.png" /></div>';
 						//echo "EATEN: ".$fskey['name']." <img src='".$fskey['image']."'> ".$fskey['option1']." ".$fskey['option2']." ".$fskey['notes'];
 
@@ -142,7 +142,7 @@ if(isset($_REQUEST['flight']))
 
 	}
 
-	echo '<form name="govote" action="vote.php" method="post"><input type="hidden" name="flight" value="'.$flight.'"/><input type="submit" value="Who Do We Eat Next!" /></form>';
+	echo '<form name="govote" action="vote.php" method="post"><input type="hidden" name="flight" value="'.$flight.'"/><input class="btn btn-danger btn-large" type="submit" value="Who Do We Eat Next!" /></form>';
 }
 else
 	header("location:index.php");

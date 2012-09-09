@@ -40,6 +40,7 @@
     text-shadow: 2px 2px 2px #000000;}
     
     .popover-title {background-color: #E3E3E3; color: #233D92; font-size: 18px; font-weight: bold; }
+    .popover-content img {max-height: 250px;}
     #hdr-right {max-width: 800px; margin-top: 1em;}
     .first-class {border-bottom:5px solid #E64395; margin-bottom:2em; }
     .radio img {border: 2px solid #E64395; width: 162px; }

@@ -53,7 +53,7 @@ else
 
 <label>Bad Traits:</label>
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Overly Talkative"><img src='/img/overly-talkative.jpg' /> </label> 
-<label class="radio inline"><input type="radio" name="option1" id="option1" value="Sleeping on You"><img src='/img/sleeping-on-you.jpg' /> </label>
+<label class="radio inline"><input type="radio" name="option1" id="option1" value="Baggage Bin Hog"><img src='/img/overhead-compartment.jpg' /> </label>
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Talking on Cell Phone"><img src='/img/talking-on-cell.png' /> </label>
 <label class="radio inline"><input type="radio" name="option1" id="option1" value="Tweeting in Flight"><img src='/img/tweeting-in-flight.png' /> </label>
 <br><br>

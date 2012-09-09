@@ -54,12 +54,10 @@ $tempimage = $filledseats[0]['image'];
 		</div>
 
 
-<!-- <img src="http://www.whodoweeatnext.com/img/eatfirst.png"> <img src="http://www.whodoweeatnext.com/img/24b.png"> -->
-
 <div id="myCarousel" class="carousel slide">
   <!-- Carousel items -->
   <div class="carousel-inner">
-                  <div class="item">
+                  <div class="active item>
                     <img src="http://www.whodoweeatnext.com/img/eatfirst.png" alt="">
                   </div>
                   <div class="item">
